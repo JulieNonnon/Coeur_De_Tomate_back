@@ -1,11 +1,12 @@
 import { DataSource } from "typeorm";
 // ou ajoute les variables d'environnement et lui donner le chemin de notre fichier:
 import dotenv from "dotenv";
+import { Product } from "./entities/Product";
 
 dotenv.config({ path: ".env.local" });
 
 //créer le app data-source, il va chercher toutes les données de notre app (la bdd)
-const AppDataSource = new DataSource ({
+const appDataSource = new DataSource ({
 
     //connexion bdd
     type: "postgres",
@@ -15,6 +16,15 @@ const AppDataSource = new DataSource ({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
 
+    //parametres connexion
+    synchronize: false,
+    logging: false,
+
+    //Entités TypeORM
+    entities: [Product],
+    subscribers: [],
+    migrations: [],
+
 });
 
-export default AppDataSource;
+export default appDataSource;
