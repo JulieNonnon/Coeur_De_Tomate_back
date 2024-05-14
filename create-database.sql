@@ -21,9 +21,10 @@ country VARCHAR(180) NOT NULL
 CREATE TABLE "user" (
 user_id SERIAL PRIMARY KEY, 
 name VARCHAR(180) NOT NULL, 
-email VARCHAR(180) NOT NULL, 
+email VARCHAR(180) NOT NULL,
+CONSTRAINT unique_email UNIQUE (email),
 password VARCHAR(180) NOT NULL, 
-role VARCHAR(50) NOT NULL, 
+is_admin BOOLEAN default FALSE, 
 address_id INT, 
 CONSTRAINT fk_address_id FOREIGN KEY (address_id) REFERENCES address (address_id)
 );
@@ -70,6 +71,7 @@ PRIMARY KEY (product_id , category_id),
 CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES product (product_id),
 CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES category (category_id)
 );
+
 
 
 -- -- TEST 
