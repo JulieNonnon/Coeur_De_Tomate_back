@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import AppDataSource from "./data-source";
 import productRouter from './routes/ProductRoutes';
+import userRouter from "./routes/UserRoutes";
 
 
 //initialisation de l'orm
@@ -19,7 +20,8 @@ AppDataSource.initialize()
 
         // définir les routes des entitées une fois créées
         app.use("/api/products", productRouter); // Route initiale de productRouter (ce qui s'inscrit après localhost):
-    
+        app.use("/api/users", userRouter);
+
         app.listen(process.env.PORT, () => {
             console.log(`Api Server is running on port: ${process.env.PORT}`);
             });

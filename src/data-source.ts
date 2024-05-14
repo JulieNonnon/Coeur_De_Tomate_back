@@ -2,6 +2,8 @@ import { DataSource } from "typeorm";
 // ou ajoute les variables d'environnement et lui donner le chemin de notre fichier:
 import dotenv from "dotenv";
 import { Product } from "./entities/Product";
+import { User } from "./entities/User";
+import { Address } from "./entities/Address";
 
 dotenv.config({ path: ".env.local" });
 
@@ -21,7 +23,7 @@ const appDataSource = new DataSource ({
     logging: false,
 
     //Entités TypeORM
-    entities: [Product],
+    entities: [Product, User, Address],
     subscribers: [],
     migrations: [],
 
