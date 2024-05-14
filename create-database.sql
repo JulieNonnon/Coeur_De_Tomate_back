@@ -1,9 +1,6 @@
--- -- SCRIPT BDD COEUR DE TOMATE
-
-
 CREATE DATABASE coeurdetomate
 
-DROP TABLE IF EXISTS adress CASCADE;
+DROP TABLE IF EXISTS address CASCADE;
 DROP TABLE IF EXISTS "user" CASCADE;
 DROP TABLE IF EXISTS "order" CASCADE;
 DROP TABLE IF EXISTS product CASCADE;
@@ -11,8 +8,8 @@ DROP TABLE IF EXISTS contenir CASCADE;
 DROP TABLE IF EXISTS category CASCADE;
 DROP TABLE IF EXISTS categoriser CASCADE;
 
-CREATE TABLE adress (
-adress_id SERIAL PRIMARY KEY, 
+CREATE TABLE address (
+address_id SERIAL PRIMARY KEY, 
 streetnbr INT NOT NULL, 
 streetname VARCHAR(180) NOT NULL, 
 details VARCHAR(180) NULL, 
@@ -27,8 +24,8 @@ name VARCHAR(180) NOT NULL,
 email VARCHAR(180) NOT NULL, 
 password VARCHAR(180) NOT NULL, 
 role VARCHAR(50) NOT NULL, 
-adress_id INT, 
-CONSTRAINT fk_adress_id FOREIGN KEY (adress_id) REFERENCES adress (adress_id)
+address_id INT, 
+CONSTRAINT fk_address_id FOREIGN KEY (address_id) REFERENCES address (address_id)
 );
 
 CREATE TABLE "order" (
