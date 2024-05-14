@@ -42,12 +42,12 @@ product_id SERIAL PRIMARY KEY,
 title VARCHAR(180) NOT NULL, 
 image VARCHAR(180) NOT NULL, 
 small_description VARCHAR(180) NOT NULL, 
-long_description VARCHAR(255) NOT NULL, 
+long_description VARCHAR(500) NOT NULL, 
 price NUMERIC(5, 2) NOT NULL, 
-pitch VARCHAR(180) NOT NULL, 
-feature1 VARCHAR(255) NOT NULL, 
-feature2 VARCHAR(255) NOT NULL, 
-feature3 VARCHAR(255) NOT NULL
+pitch VARCHAR(500) NOT NULL, 
+feature1 VARCHAR(500) NOT NULL, 
+feature2 VARCHAR(500) NOT NULL, 
+feature3 VARCHAR(500) NOT NULL
 );
 
 CREATE TABLE contenir (
