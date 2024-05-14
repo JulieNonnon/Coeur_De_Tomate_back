@@ -5,7 +5,7 @@ interface User {
     name: string;
     email: string;
     password: string;
-    role: string;
+    isAdmin: boolean;
     address_id: Address;
 }
 

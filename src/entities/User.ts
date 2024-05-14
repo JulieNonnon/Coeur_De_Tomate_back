@@ -10,14 +10,14 @@ export class User {
   @Column({ nullable: false })
   name?: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, unique: true })
   email?: string;
 
   @Column({ nullable: false })
   password?: string;
 
-  @Column({ nullable: false })
-  role?: string;
+  @Column({ default: false, name: "is_admin" }) // Par défaut, un utilisateur n'est pas un administrateur
+  isAdmin?: boolean;
 
   @ManyToOne(type => Address, address => address.users)
   @JoinColumn({ name: "address_id" })

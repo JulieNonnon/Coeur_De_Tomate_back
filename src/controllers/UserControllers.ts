@@ -7,32 +7,37 @@ export class UserController {
 
     async signup(req : Request, res : Response) {
         
-        console.log("UserController")
-        const { email, password } = req.body;
+        console.log("UserController: Signup")
+        const { name, email, password } = req.body;
         // const email = req.body.email;
         // const password = req.body.password;
-        const createUser = await this.userService.signup(email, password)
+        const createUser = await this.userService.signup(name, email, password)
     
         if(createUser) {
-            res.status(201).json({});
+            res.status(201).json({message: "Utilisateur enregistré ✅"});
         } else {
-            res.status(500).json({});
+            res.status(500).json({message: "L'enregistrement utilisateur n'a pas pu aboutir"});
         }
     
     }
 
     async login(req : Request, res : Response) {
 
-        console.log("UserController Login")
+        console.log("UserController: Login")
         const { email, password } = req.body;
         const token = await this.userService.login(email, password)
     
         if(token) {
-            res.status(201).json({});
+            // Récupérer le nom de l'utilisateur
+            const user = await this.userService.getUserByEmail(email);
+            if (user) {
+                res.status(201).json({message: `Utilisateur ${user.name} connecté ✅`});
+            } else {
+                res.status(500).json({message: "Impossible de récupérer les informations de l'utilisateur"});
+            }
         } else {
-            res.status(500).json({});
+            res.status(500).json({message: "La connexion utilisateur n'a pas pu aboutir"});    
         }
-
     }
 }
 
