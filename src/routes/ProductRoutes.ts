@@ -29,4 +29,9 @@ productRouter.delete("/:id", (req, res) => {
     productController.delete(req,res);
 });
 
+productRouter.get("/last", (req, res) => {
+    console.log("productRouter: GetLast👌")
+    productController.getLast(req, res);
+});
+
 export default productRouter;
