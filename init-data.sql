@@ -2,7 +2,7 @@ INSERT INTO product (title, image, small_description, long_description, price, p
 VALUES
     (
       'Coeur de boeuf', 
-      'src/assets/img/product-coeur-de-boeuf.png', --'https://ibb.co/kSj3Jdh'
+      'assets/img/product-coeur-de-boeuf.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété qui séduira les amateurs de tomates par sa forme distinctive et son goût exceptionnel. Ces tomates sont caractérisées par leur grande taille, leur forme côtelée et leur chair charnue, offrant une expérience gustative riche et savoureuse.', 
       4,
@@ -13,7 +13,7 @@ VALUES
     ),
     ( 
       'Beauty Queen', 
-      'src/assets/img/product-beauty-queen.png', --'https://ibb.co/NL7VQ3w'
+      'assets/img/product-beauty-queen.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété qui porte bien son nom grâce à sa beauté éclatante et son goût exquis. Ces tomates sont un véritable régal pour les yeux et les papilles, idéales pour ceux qui recherchent une touche de sophistication dans leur jardin et leurs plats.', 
       5,
@@ -24,7 +24,7 @@ VALUES
     ),
     ( 
       'Noire de crimée', 
-      'src/assets/img/product-noire-de-crimee.png',--'https://ibb.co/ThgMKZz'
+      'assets/img/product-noire-de-crimee.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété unique réputée pour son aspect sombre et sa saveur incomparable. Originaire de la région de Crimée, cette tomate est un véritable trésor culinaire, parfait pour ceux qui recherchent une expérience gustative riche et exotique.', 
       3,
@@ -35,7 +35,7 @@ VALUES
     ),
     ( 
       'Ananas', 
-      'src/assets/img/product-ananas.png',--'https://ibb.co/mFJwNyF',
+      'assets/img/product-ananas.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété captivante réputée pour sa chair juteuse et son goût délicieusement sucré. Originaire des tropiques, cette tomate est un véritable trésor pour les amateurs de saveurs exotiques et les passionnés de jardinage.', 
       6,
@@ -46,7 +46,7 @@ VALUES
     ),
     ( 
       'Green Zebra', 
-      'src/assets/img/product-green-zebra.png',--'https://ibb.co/S3BjcXF'
+      'assets/img/product-green-zebra.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété unique qui marie la fraîcheur de la couleur verte avec la douceur juteuse des tomates. Ces tomates sont un régal visuel et gustatif, idéales pour apporter une touche d"originalité à votre jardin et à vos plats.', 
       2,
@@ -57,7 +57,7 @@ VALUES
     ),
     ( 
       'White Beauty', 
-      'src/assets/img/product-white-beauty.png',--'https://ibb.co/S0GbLdW'
+      'assets/img/product-white-beauty.png',
       'Sachet individuel d"une quinzaine de graines.', 
       'Une variété unique qui marie la douceur délicate de la couleur blanche avec une saveur rafraîchissante et succulente. Ces tomates sont un régal pour les yeux et les papilles, idéales pour apporter une touche de sophistication à votre jardin et à vos plats.', 
       66.55,
@@ -67,4 +67,17 @@ VALUES
       'Nos graines sont sélectionnées avec soin pour garantir des plants vigoureux et productifs, prêts à prospérer dans votre jardin. Nous nous engageons à vous offrir des produits de la plus haute qualité, cultivés avec passion et dévouement.'
     );
 
+-- For Postman Demo purpose only:
+
+        -- {
+        --     "title": "DEMO Tomate Toto",
+        --     "image": "assets/img/product-test-toto.png"",
+        --     "small_description": "For demo purpose only",
+        --     "long_description": "For demo purpose only",
+        --     "price": 0,
+        --     "pitch": "For demo purpose only",
+        --     "feature1": "For demo purpose only",
+        --     "feature2": "For demo purpose only",
+        --     "feature3": "For demo purpose only"
+        -- }
   
