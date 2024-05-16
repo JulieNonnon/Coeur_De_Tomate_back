@@ -51,6 +51,15 @@ class ProductController{
             res.status(500).send({ status: "Failed delete", message: error});
         }
     }
+
+    async getLast(req: Request, res: Response) {
+        try {
+            const lastProduct = await this.productService.getLastProduct();
+            res.send({ status: "ok", data: lastProduct });
+        } catch (error) {
+            res.status(500).send({ status: "Failed getLast", message: error })
+        }
+    }
 }
 
 export default ProductController;

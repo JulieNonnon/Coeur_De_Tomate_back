@@ -31,6 +31,27 @@ class ProductService {
     async delete(id: string) { // AppDataSource.query(`DELETE FROM product WHERE id = ${id};`);
         return this.productRepository.delete(id);
     }
+
+    // async getLastProduct() {
+    //     const lastProduct = await this.productRepository.findOne({
+    //         order: {
+    //             id: 'DESC' // Trie les produits par ID en ordre décroissant
+    //         }
+    //     });
+    //     return lastProduct;
+    // }
+
+    async getLastProduct() {
+        const query = `
+            SELECT *
+            FROM products
+            ORDER BY id DESC
+            LIMIT 1
+        `;
+        const [lastProduct] = await this.productRepository.query(query);
+        return lastProduct;
+    }
+
 }
 
 export default ProductService;
