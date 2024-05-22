@@ -67,17 +67,4 @@ VALUES
       'Nos graines sont sélectionnées avec soin pour garantir des plants vigoureux et productifs, prêts à prospérer dans votre jardin. Nous nous engageons à vous offrir des produits de la plus haute qualité, cultivés avec passion et dévouement.'
     );
 
--- For Postman Demo purpose only:
-
-        -- {
-        --     "title": "DEMO Tomate Toto",
-        --     "image": "assets/img/product-test-toto.png"",
-        --     "small_description": "For demo purpose only",
-        --     "long_description": "For demo purpose only",
-        --     "price": 0,
-        --     "pitch": "For demo purpose only",
-        --     "feature1": "For demo purpose only",
-        --     "feature2": "For demo purpose only",
-        --     "feature3": "For demo purpose only"
-        -- }
   
