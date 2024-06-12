@@ -18,6 +18,11 @@ class ProductController{
 
     async getById(req: Request, res: Response) {
         try {
+            const productId = Number(req.params.id);
+            if (isNaN(productId)) {
+                res.status(400).send({ status: "Failed getById", message: "Invalid product ID" });
+                return;
+            }
             const oneProduct = await this.productService.getById(Number(req.params.id));
             res.send({ status: "ok", data: oneProduct });
         } catch (error) {
