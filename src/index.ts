@@ -1,11 +1,15 @@
 import express from "express";
 import cors from "cors";
-import multer from "multer";
+import session from "express-session";
+import pgSession from "connect-pg-simple";
 import AppDataSource from "./data-source";
 import productRouter from './routes/ProductRoutes';
 import userRouter from "./routes/UserRoutes";
-import path from "path";
+import dotenv from "dotenv";
+//import path from "path";
+//import multer from "multer";
 
+dotenv.config({ path: ".env.local" });
 
 //initialisation de l'orm
 AppDataSource.initialize()
@@ -38,6 +42,24 @@ AppDataSource.initialize()
         // });
 
         // définir les routes des entitées une fois créées
+        
+        // Configuration des sessions
+    app.use(session({
+        store: new (pgSession(session))({
+          conObject: {
+            user: process.env.DB_USERNAME,
+            password: process.env.DB_PASSWORD,
+            host: process.env.DB_HOST,
+            port: Number(process.env.DB_PORT),
+            database: process.env.DB_NAME,
+          }
+        }),
+        secret: 'yourSecretKey',
+        resave: false,
+        saveUninitialized: false,
+        cookie: { maxAge: 180 * 60 * 1000 } // 3 heures
+      }));
+        
         app.use("/api/products", productRouter); // Route initiale de productRouter (ce qui s'inscrit après localhost):
         app.use("/api/users", userRouter);
 
