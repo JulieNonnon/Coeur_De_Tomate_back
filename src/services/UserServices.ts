@@ -80,5 +80,10 @@ export class UserService {
             throw error;
         }
     }
+    
+    async getUserById(id: number) {
+        return await this.userRepository.findOneBy({ id });
+    }
+    
 }
 export default UserService;

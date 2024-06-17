@@ -10,6 +10,8 @@ DROP TABLE IF EXISTS categoriser CASCADE;
 
 CREATE TABLE address (
 address_id SERIAL PRIMARY KEY, 
+familyname VARCHAR(180) NOT NULL, 
+firstname VARCHAR(180) NULL,
 streetnbr INT NOT NULL, 
 streetname VARCHAR(180) NOT NULL, 
 details VARCHAR(180) NULL, 

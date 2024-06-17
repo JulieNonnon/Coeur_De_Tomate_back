@@ -1,5 +1,7 @@
 interface Address {
     id: number;
+    familyname: string;
+    firstname: string;
     streetnbr: string;
     streetname: string;
     details: string;
