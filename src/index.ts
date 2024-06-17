@@ -1,11 +1,12 @@
 import express from "express";
 import cors from "cors";
-import session from "express-session";
-import pgSession from "connect-pg-simple";
+import dotenv from "dotenv";
 import AppDataSource from "./data-source";
 import productRouter from './routes/ProductRoutes';
 import userRouter from "./routes/UserRoutes";
-import dotenv from "dotenv";
+import addressRouter from "./routes/AddressRoutes";
+import session from "express-session";
+import pgSession from "connect-pg-simple";
 //import path from "path";
 //import multer from "multer";
 
@@ -62,6 +63,7 @@ AppDataSource.initialize()
         
         app.use("/api/products", productRouter); // Route initiale de productRouter (ce qui s'inscrit après localhost):
         app.use("/api/users", userRouter);
+        app.use("/api/addresses", addressRouter);
 
         app.listen(process.env.PORT, () => {
             console.log(`Api Server is running on port: ${process.env.PORT}`);

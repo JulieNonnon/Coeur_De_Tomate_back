@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "b415606a-c6d6-4bfe-bdeb-3a4731cc1b60",
+		"name": "🍅CDT Address",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28018959"
+	},
+	"item": [
+		{
+			"name": "CreateAddress",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"familyname\": \"Toto\",\r\n    \"firstname\": \"Tototo\",\r\n    \"streetnbr\": \"123\",\r\n    \"streetname\": \"rue Mouffetard\",\r\n    \"details\": \"bis\",\r\n    \"postalcode\": \"75000\",\r\n    \"city\": \"paris\",\r\n    \"country\": \"France\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAddressById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAddressById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/addresses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"addresses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAddressById",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
