@@ -7,8 +7,6 @@ import userRouter from "./routes/UserRoutes";
 import addressRouter from "./routes/AddressRoutes";
 import session from "express-session";
 import pgSession from "connect-pg-simple";
-//import path from "path";
-//import multer from "multer";
 
 dotenv.config({ path: ".env.local" });
 
@@ -24,25 +22,6 @@ AppDataSource.initialize()
                     methods: ["GET", "POST", "PUT", "DELETE"], // méthodes pour requètes CRUD
                 }
             ));
-
-        // // Configuration de Multer pour l'upload de fichiers
-        // const storage = multer.diskStorage({
-        //     destination: (req, file, cb) => {
-        //         cb(null, path.join(__dirname, "uploads")); // Spécifier le dossier de destination des fichiers uploadés
-        //     },
-        //     filename: (req, file, cb) => {
-        //         cb(null, Date.now() + path.extname(file.originalname)); // Renommer le fichier avec un timestamp pour éviter les collisions de noms
-        //     }
-        // });
-
-        // const upload = multer({ storage: storage });
-
-        // // Utilisation de Multer pour les routes nécessitant l'upload de fichiers
-        // app.post("/api/products", upload.single("image"), (req, res) => {
-        //     // Traitement des données et du fichier uploadé ici
-        // });
-
-        // définir les routes des entitées une fois créées
         
         // Configuration des sessions
     app.use(session({

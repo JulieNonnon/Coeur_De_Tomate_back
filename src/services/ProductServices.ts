@@ -6,7 +6,7 @@ class ProductService {
     private productRepository = appDataSource.getRepository(Product);
 
     async getAll() { // return AppDataSource.query("SELECT * FROM product;");
-        console.log('heyyy');
+        console.log(' "All your tomatoes are belong to us." ');
         
         const trucs = this.productRepository.find();
 

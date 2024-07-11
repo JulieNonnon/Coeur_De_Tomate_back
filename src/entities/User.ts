@@ -17,7 +17,7 @@ export class User {
   password?: string;
 
   @Column({ default: false, name: "is_admin" }) // Par défaut, un utilisateur n'est pas un administrateur
-  isAdmin?: boolean;
+  is_admin?: boolean;
 
   @ManyToOne(type => Address, address => address.users)
   @JoinColumn({ name: "address_id" })

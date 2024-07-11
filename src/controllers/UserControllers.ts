@@ -47,7 +47,9 @@ export class UserController {
             // Récupérer le nom de l'utilisateur
             const user = await this.userService.getUserByEmail(email);
             if (user) {
-                res.status(201).json({message: `Utilisateur ${user.name} connecté ✅`});
+                // res.status(201).json({message: `Utilisateur ${user.name} connecté ✅`}, {token: token});
+                res.status(201).json({token: token});
+
             } else {
                 res.status(500).json({message: "Impossible de récupérer les informations de l'utilisateur"});
             }

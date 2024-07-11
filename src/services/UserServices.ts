@@ -55,7 +55,7 @@ export class UserService {
             { expiresIn: "4h"});
 
         // Vérification si l'utilisateur est un administrateur
-        if (user.isAdmin) {
+        if (user.is_admin) {
             // Faites quelque chose de spécial pour les administrateurs
             console.log("Admin access granted");
         }
