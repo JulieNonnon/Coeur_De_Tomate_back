@@ -1,25 +1,3 @@
--- PREPARATIONS DONNEES DE L'ADMIN:
-
--- INSERT INTO address (streetnbr, streetname, details, postalcode, city, country)
--- VALUES (
---   123, 
---   'rue de la paix', 
---   'bat C', 
---   '75008', 
---   'Paris', 
---   'France'
---   )
--- ON CONFLICT (streetnbr, streetname, postalcode, city, country) DO NOTHING;
-
--- Récupérer l'id de l'adresse nouvellement créée ou existante
--- SET @address_id = (SELECT address_id FROM address WHERE streetnbr = 123 AND streetname = 'rue de la paix' AND postalcode = '75008' AND city = 'Paris' AND country = 'France');
-
--- Créer un utilisateur administrateur
-INSERT INTO "user" (name, email, password, is_admin)
-VALUES ('moi', 'moi@test.com', '$2b$10$V7/ZxrtspFHF0FN0BQT7rOWt79NMilPMl7K0XDmF3sEeRt8QjDA4S', true); 
---moi
-
-
 -- PREPARATIONS DONNEES DES PRODUITS:
 
 INSERT INTO product (title, image, small_description, long_description, price, pitch, feature1, feature2, feature3)
@@ -90,5 +68,30 @@ VALUES
       'Une douceur subtile équilibrée par une légère acidité, créant une symphonie de saveurs délicates et harmonieuses. Chaque bouchée libère un parfum frais et envoûtant, évoquant la pureté et la fraîcheur des jardins en fleurs.',
       'Nos graines sont sélectionnées avec soin pour garantir des plants vigoureux et productifs, prêts à prospérer dans votre jardin. Nous nous engageons à vous offrir des produits de la plus haute qualité, cultivés avec passion et dévouement.'
     );
+
+
+
+
+
+    -- PREPARATIONS DONNEES DE L'ADMIN:
+
+-- INSERT INTO address (streetnbr, streetname, details, postalcode, city, country)
+-- VALUES (
+--   123, 
+--   'rue de la paix', 
+--   'bat C', 
+--   '75008', 
+--   'Paris', 
+--   'France'
+--   )
+-- ON CONFLICT (streetnbr, streetname, postalcode, city, country) DO NOTHING;
+
+-- Récupérer l'id de l'adresse nouvellement créée ou existante
+-- SET @address_id = (SELECT address_id FROM address WHERE streetnbr = 123 AND streetname = 'rue de la paix' AND postalcode = '75008' AND city = 'Paris' AND country = 'France');
+
+-- Créer un utilisateur administrateur
+INSERT INTO "user" (name, email, password, is_admin)
+VALUES ('moi', 'moi@test.com', '$2b$10$V7/ZxrtspFHF0FN0BQT7rOWt79NMilPMl7K0XDmF3sEeRt8QjDA4S', true); 
+--moi
 
   
