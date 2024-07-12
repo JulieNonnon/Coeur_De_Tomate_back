@@ -90,8 +90,8 @@ VALUES
 -- SET @address_id = (SELECT address_id FROM address WHERE streetnbr = 123 AND streetname = 'rue de la paix' AND postalcode = '75008' AND city = 'Paris' AND country = 'France');
 
 -- Créer un utilisateur administrateur
-INSERT INTO "user" (name, email, password, is_admin)
-VALUES ('moi', 'moi@test.com', '$2b$10$V7/ZxrtspFHF0FN0BQT7rOWt79NMilPMl7K0XDmF3sEeRt8QjDA4S', true); 
---moi
+-- INSERT INTO "user" (name, email, password, is_admin)
+-- VALUES ('moi', 'moi@test.com', '$2b$10$V7/ZxrtspFHF0FN0BQT7rOWt79NMilPMl7K0XDmF3sEeRt8QjDA4S', true); 
+-- moi
 
   
