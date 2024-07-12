@@ -23,7 +23,7 @@ country VARCHAR(180) NOT NULL
 CREATE TABLE "user" (
 user_id SERIAL PRIMARY KEY, 
 name VARCHAR(180) NOT NULL, 
-email VARCHAR(180) NOT NULL,
+email VARCHAR(320) NOT NULL,
 CONSTRAINT unique_email UNIQUE (email),
 password VARCHAR(180) NOT NULL, 
 is_admin BOOLEAN default FALSE, 
